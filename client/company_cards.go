@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	httpclient "github.com/rojakc96/tachosync-go/internal/client"
-	"github.com/rojakc96/tachosync-go/internal/models"
+	"github.com/rojakc96/tachosync-go/models"
 )
 
 func (c *Client) GetCompanyCard(ctx context.Context, id string) (*models.CompanyCardResponse, error) {
