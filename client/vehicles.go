@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	httpclient "github.com/rojakc96/tachosync-go/client"
-	"github.com/rojakc96/tachosync-go/models"
+	httpclient "github.com/rojakc96/tachosync-go/internal/client"
+	"github.com/rojakc96/tachosync-go/internal/models"
 )
 
 func (c *Client) ListVehicles(ctx context.Context, params models.ListVehiclesParams) (*models.VehiclesPage, error) {

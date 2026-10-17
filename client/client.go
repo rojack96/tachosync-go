@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	httpclient "github.com/rojakc96/tachosync-go/client"
+	httpclient "github.com/rojakc96/tachosync-go/internal/client"
 )
 
 // Client is an authenticated TachoSync API client.
