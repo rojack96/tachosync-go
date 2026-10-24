@@ -44,7 +44,12 @@ func NewClient(baseURL, apiKey string, options ...Option) *Client {
 	return c
 }
 
-func (c *Client) request(ctx context.Context, method, endpoint string, query, body, result any, pathParams ...httpclient.PathParameter) (*http.Response, error) {
+func (c *Client) request(
+	ctx context.Context,
+	method, endpoint string,
+	query, body, result any,
+	pathParams ...httpclient.PathParameter,
+) (*http.Response, error) {
 	fullURL, err := httpclient.BuildEndpoint(c.baseURL, endpoint, pathParams...)
 	if err != nil {
 		return nil, err
