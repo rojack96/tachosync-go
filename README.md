@@ -1,24 +1,45 @@
 # TachoSync Go
 
-A typed Go client for the TachoSync API, based on OpenAPI specification `2026.10.15`.
+A typed Go client for the TachoSync REST API, based on OpenAPI specification `2026.10.15`.
+
+> **Unofficial SDK:** This project is independently developed and is not affiliated with, endorsed by, sponsored by, or maintained by Teltonika.
 
 The library automatically handles:
 
-- authentication through the `X-Api-Key` header;
+- Authentication through the `X-Api-Key` header;
 - JSON request and response encoding;
-- path and query parameters;
-- pagination and filters;
-- binary tachograph file downloads;
-- request cancellation through `context.Context`;
-- empty HTTP responses and resource IDs returned in the `Location` header.
+- Path and query parameters;
+- Pagination and filters;
+- Binary tachograph file downloads;
+- Request cancellation through `context.Context`;
+- Empty HTTP responses and resource IDs returned in the `Location` header.
+
+## Disclaimer
+
+This is an independent, unofficial, open-source Go SDK for the TachoSync REST API. It is not affiliated with, endorsed by, sponsored by, or officially maintained by Teltonika or its affiliates.
+
+TachoSync and Teltonika are trademarks of their respective owners. Their names are used solely to identify the service with which this SDK is compatible. No affiliation or endorsement is implied.
+
+This SDK is independently developed based on publicly available API documentation and does not include proprietary Teltonika source code. Access to and use of the TachoSync service require appropriate credentials and are subject to the API provider's applicable terms and conditions. Users are responsible for complying with those terms.
+
+Teltonika may change the API or its availability independently of this project. This SDK is provided without any warranty, as described in its license.
+
+## API Documentation
+
+This SDK targets the TachoSync REST API documented in OpenAPI specification version `2026.10.15`. This is the **API specification version**, not the SDK release version.
+
+- [TachoSync API documentation](https://wiki.teltonika-gps.com/view/TachoSync_API)
+- [TachoSync OpenAPI documentation](https://api.tacho.teltonika.lt/api-docs/v1)
+
+The API documentation and specification are maintained by Teltonika and may change independently of this project. Their public availability does not, by itself, grant permission to redistribute the specification or other third-party materials.
 
 ## Requirements
 
 - Go `1.24.0` or later;
-- a TachoSync API base URL;
-- a valid TachoSync API key.
+- A TachoSync API base URL;
+- A valid TachoSync API key.
 
-The module requires Go `1.24.0` or later. Go 1.24 is the minimum version because the public models use generic type aliases. The base URL must point to the API origin without the `/v1` suffix because endpoint paths are appended automatically.
+Go 1.24 is the minimum version because the public models use generic type aliases. The base URL must point to the API origin **without** the `/v1` suffix because endpoint paths are appended automatically.
 
 ## Installation
 
@@ -71,7 +92,7 @@ func main() {
 }
 ```
 
-The API key is added to every request automatically. You do not need to build headers or endpoint URLs manually.
+The API key is added to every request automatically. You do not need to build headers or endpoint URLs manually. Keep API keys out of source control and application logs.
 
 ## Listing drivers
 
@@ -194,7 +215,7 @@ if err := os.WriteFile("driver-files.bin", data, 0o600); err != nil {
 }
 ```
 
-`DownloadVehicleFiles` works in the same way. Set `FileFormat` to one of the formats supported by the API when a specific output format is required.
+`DownloadVehicleFiles` works in the same way. Set `FileFormat` to one of the formats supported by the API when a specific output format is required. Tachograph files may contain sensitive data; handle downloaded files according to applicable privacy and data-protection obligations.
 
 ## Quick schedules
 
@@ -264,7 +285,7 @@ if err != nil {
 fmt.Println(vehicle.ID)
 ```
 
-Serialization, request construction, transport, and JSON decoding errors are returned to the caller in the same way.
+Serialization, request construction, transport, and JSON decoding errors are returned to the caller in the same way. Avoid logging response bodies if they contain sensitive information.
 
 ## Available API methods
 
@@ -353,3 +374,5 @@ go test ./...
 ## License
 
 Distributed under the MIT License. See [LICENSE](LICENSE).
+
+The MIT License applies to original code and materials owned by this project's contributors. It does not grant rights to Teltonika's trademarks, services, API documentation, or other third-party intellectual property. Those remain subject to their respective owners' rights and applicable terms.
