@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/rojakc96/tachosync-go/models"
+	"github.com/rojack96/tachosync-go/models"
 )
 
 func (c *Client) ListDriverFiles(ctx context.Context, params models.ListDriverFilesParams) (*models.DriverFilesPage, error) {

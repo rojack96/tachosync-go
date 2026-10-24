@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	httpclient "github.com/rojakc96/tachosync-go/internal/client"
-	"github.com/rojakc96/tachosync-go/models"
+	httpclient "github.com/rojack96/tachosync-go/internal/client"
+	"github.com/rojack96/tachosync-go/models"
 )
 
 type roundTripFunc func(*http.Request) (*http.Response, error)

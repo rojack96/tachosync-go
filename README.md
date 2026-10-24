@@ -23,15 +23,15 @@ The module requires Go `1.24.0` or later. Go 1.24 is the minimum version because
 ## Installation
 
 ```bash
-go get github.com/rojakc96/tachosync-go@latest
+go get github.com/rojack96/tachosync-go@latest
 ```
 
 The client and its public models are provided by separate packages:
 
 ```go
 import (
-    tachosync "github.com/rojakc96/tachosync-go/client"
-    "github.com/rojakc96/tachosync-go/models"
+    tachosync "github.com/rojack96/tachosync-go/client"
+    "github.com/rojack96/tachosync-go/models"
 )
 ```
 
@@ -50,7 +50,7 @@ import (
     "log"
     "os"
 
-    tachosync "github.com/rojakc96/tachosync-go/client"
+    tachosync "github.com/rojack96/tachosync-go/client"
 )
 
 func main() {
