@@ -1,5 +1,7 @@
 # TachoSync Go
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A typed Go client for the TachoSync REST API, based on OpenAPI specification `2026.10.15`.
 
 > **Unofficial SDK:** This project is independently developed and is not affiliated with, endorsed by, sponsored by, or maintained by Teltonika.
